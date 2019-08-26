@@ -1,0 +1,91 @@
+// COLOR VARIABLES
+$color-primary: #c69963;
+$color-primary-dark: #B28451;
+
+$color-secondary: #101d2c;
+
+$color-grey-light-1: #f9f7f6;
+$color-grey-light-2: #aaa;
+
+$color-grey-dark-1: #54483A;
+$color-grey-dark-2: #6D5D4B;
+
+// FONT VARIABLES
+$font-primary: 'Nunito', sans-serif;
+$font-display: 'Josefin Sans', sans-serif;
+
+// RESPONSIVE BREAKPOINT
+$bp-largest: 75em; // 1200px / 16px = 75em
+$bp-large: 62.5em; // 1000px / 16px = 62.5em
+$bp-medium: 50em; // 800px / 16px = 50em
+$bp-small: 37.5em; // 600px / 16px = 37.5em
+
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: inherit;
+}
+
+html {
+  box-sizing: border-box;
+  font-size: 62.5%; // 10px / 16px = 1 rem= 10px
+
+  @media only screen and (max-width: $bp-largest) {
+    font-size: 50%;
+  }
+}
+
+body {
+  font-family: $font-primary;
+  color: $color-grey-dark-2;
+  font-weight: 300;
+  line-height: 1.6;
+}
+
+.container {
+  display: grid;
+  grid-template-rows: 80vh min-content 40vw repeat(3, min-content);
+
+  // Divide columns into grid because this is more useful
+  // 8rem for sidebar
+  // 1fr for empty before the 8 column
+  // 14rem for etc
+  // max = 1140 / 8 = 14 something
+  // min = min-content
+  // then 1fr for the other empty
+  //
+  // later on the story__ we can have fullbleed effect
+  // and also gallery, so we need these 1fr left and right
+  grid-template-columns:
+    [sidebar-start] 8rem
+    [sidebar-end full-start] minmax(6rem, 1fr) // Make sure the padding does not go below 6rem
+    [center-start] repeat(8,
+      [col-start] minmax(min-content, 14rem)
+      [col-end]
+    )
+    [center-end] minmax(6rem, 1fr) // Make sure the padding does not go below 6rem
+    [full-end];
+
+  // Arranging grid when media query changes
+  // this is the reason why it is important
+  // to always name the columns because otherwise
+  // the layout will be messy since the layout uses numbers
+  @media only screen and (max-width: $bp-large) {
+    grid-template-rows: 6rem 80vh min-content 40vw repeat(3, min-content);
+    grid-template-columns:
+      [full-start] minmax(6rem, 1fr) // Make sure the padding does not go below 6rem
+      [center-start] repeat(8,
+        [col-start] minmax(min-content, 14rem)
+        [col-end]
+      )
+      [center-end] minmax(6rem, 1fr) // Make sure the padding does not go below 6rem
+      [full-end];
+  }
+
+  @media only screen and (max-width: $bp-medium) {
+    // The rest is now sized based on min-content
+    grid-template-rows: 6rem calc(100vh - 6rem);
+  }
+}

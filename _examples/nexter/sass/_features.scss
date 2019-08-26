@@ -1,0 +1,33 @@
+.features {
+  margin: 15rem 0;
+  grid-column: center-start / center-end;
+
+  display: grid;
+
+  // auto-fit makes it easier for 
+  // responsive design
+  grid-template-columns: repeat(auto-fit, minmax(25rem, 1fr));
+
+  grid-gap: 6rem;
+  justify-items: center;
+}
+
+.feature {
+  display: grid;
+  grid-template-columns: min-content 1fr;
+  grid-row-gap: 1.5rem;
+  grid-column-gap: 2.5rem;
+  align-items: start;
+
+  &__icon {
+    fill: $color-primary;
+    width: 4.5rem;
+    height: 4.5rem;
+    grid-row: 1 / span 2; // -1 only works with explicit grid
+    transform: translateY(-1rem);
+  }
+
+  &__text {
+    font-size: 1.7rem;
+  }
+}
