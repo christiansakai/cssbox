@@ -1,0 +1,32 @@
+/** Universal Reset */
+*,
+*::after,
+*::before {
+  margin: 0;
+  padding: 0;
+  /**
+   * All elements inherit 
+   * box-sizing up to body
+   */
+  box-sizing: inherit; }
+
+/** Demonstrate REM */
+html {
+  /**
+   * This defines what 1 REM is.
+   * This respect the user's
+   * setting of default font size.
+   * If the default font-size is 16px
+   * it will be 16px, etc.
+   * 
+   * Since what we want is 10px here
+   * then 10px / 16px = 62.5%
+   */
+  font-size: 62.5%; }
+
+body {
+  /**
+   * All elements inherit 
+   * box-sizing from body
+   */
+  box-sizing: border-box; }

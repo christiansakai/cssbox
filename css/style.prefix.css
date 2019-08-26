@@ -1,0 +1,34 @@
+/** Universal Reset */
+*,
+*::after,
+*::before {
+  margin: 0;
+  padding: 0;
+  /**
+   * All elements inherit 
+   * box-sizing up to body
+   */
+  box-sizing: inherit; }
+
+/** Demonstrate REM */
+html {
+  /**
+   * This defines what 1 REM is.
+   * This respect the user's
+   * setting of default font size.
+   * If the default font-size is 16px
+   * it will be 16px, etc.
+   * 
+   * Since what we want is 10px here
+   * then 10px / 16px = 62.5%
+   */
+  font-size: 62.5%; }
+
+body {
+  /**
+   * All elements inherit 
+   * box-sizing from body
+   */
+  box-sizing: border-box; }
+
+/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInN0eWxlLmNvbXAuY3NzIl0sIm5hbWVzIjpbXSwibWFwcGluZ3MiOiJBQUFBLHFCQUFxQjtBQUNyQjs7O0VBR0UsU0FBUztFQUNULFVBQVU7RUFDVjs7O0lBR0U7RUFDRixtQkFBbUIsRUFBRTs7QUFFdkIscUJBQXFCO0FBQ3JCO0VBQ0U7Ozs7Ozs7OztJQVNFO0VBQ0YsZ0JBQWdCLEVBQUU7O0FBRXBCO0VBQ0U7OztJQUdFO0VBQ0Ysc0JBQXNCLEVBQUUiLCJmaWxlIjoic3R5bGUucHJlZml4LmNzcyIsInNvdXJjZXNDb250ZW50IjpbIi8qKiBVbml2ZXJzYWwgUmVzZXQgKi9cbiosXG4qOjphZnRlcixcbio6OmJlZm9yZSB7XG4gIG1hcmdpbjogMDtcbiAgcGFkZGluZzogMDtcbiAgLyoqXG4gICAqIEFsbCBlbGVtZW50cyBpbmhlcml0IFxuICAgKiBib3gtc2l6aW5nIHVwIHRvIGJvZHlcbiAgICovXG4gIGJveC1zaXppbmc6IGluaGVyaXQ7IH1cblxuLyoqIERlbW9uc3RyYXRlIFJFTSAqL1xuaHRtbCB7XG4gIC8qKlxuICAgKiBUaGlzIGRlZmluZXMgd2hhdCAxIFJFTSBpcy5cbiAgICogVGhpcyByZXNwZWN0IHRoZSB1c2VyJ3NcbiAgICogc2V0dGluZyBvZiBkZWZhdWx0IGZvbnQgc2l6ZS5cbiAgICogSWYgdGhlIGRlZmF1bHQgZm9udC1zaXplIGlzIDE2cHhcbiAgICogaXQgd2lsbCBiZSAxNnB4LCBldGMuXG4gICAqIFxuICAgKiBTaW5jZSB3aGF0IHdlIHdhbnQgaXMgMTBweCBoZXJlXG4gICAqIHRoZW4gMTBweCAvIDE2cHggPSA2Mi41JVxuICAgKi9cbiAgZm9udC1zaXplOiA2Mi41JTsgfVxuXG5ib2R5IHtcbiAgLyoqXG4gICAqIEFsbCBlbGVtZW50cyBpbmhlcml0IFxuICAgKiBib3gtc2l6aW5nIGZyb20gYm9keVxuICAgKi9cbiAgYm94LXNpemluZzogYm9yZGVyLWJveDsgfVxuIl19 */
